@@ -1,0 +1,22 @@
+{
+  "name": "article_mgmt",
+  "version": "1.0.0",
+  "description": "article_management_automation",
+  "keywords": [],
+  "license": "ISC",
+  "author": "sagun",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {"test:e2e": "cucumber-js \"e2e/features/**/*.feature\" --require-module ts-node/register --require \"e2e/stepDefinitions/**/*.ts\" --require cucumber.conf.js"
+},
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.0"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "install": "^0.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2"
+  }
+}
