@@ -7,7 +7,8 @@
   "author": "sagun",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {"test:e2e": "cucumber-js \"e2e/features/**/*.feature\" --require-module ts-node/register --require \"e2e/stepDefinitions/**/*.ts\" --require cucumber.conf.js"
+  "scripts": {
+   "test:e2e": "cucumber-js \"e2e/feature/**/*.feature\" --require-module ts-node/register --require \"e2e/stepDefinations/**/*.ts\" --require cucumber.conf.js"
 },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

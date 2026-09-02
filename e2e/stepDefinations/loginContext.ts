@@ -16,8 +16,10 @@ When("I enter valid username", async function (this: CustomWorld, dataTable: Dat
   const usernames = dataTable.raw().slice(1).flat();
 
   for (const username of usernames) {
-    await this.loginPage.enterEmail(username);
+    await this.loginPage.enterName(username);
+   
   }
+   await this.loginPage.clickLoginButton();
 });
 
 Then("the user logged in successfully and redirected to the home page", async function (this: CustomWorld) {
@@ -26,4 +28,16 @@ Then("the user logged in successfully and redirected to the home page", async fu
   }
 
   await expect(this.loginPage.dashboardSelector).toBeVisible();
+});
+
+Given("I am logged in", async function (this: CustomWorld) {
+    this.loginPage = new LoginPage(this.page);
+
+    await this.loginPage.navigateToLoginPage();
+
+    await this.loginPage.enterName("samir");
+
+    await this.loginPage.clickLoginButton();
+
+    await expect(this.loginPage.dashboardSelector).toBeVisible();
 });

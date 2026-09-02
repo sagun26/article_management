@@ -11,6 +11,7 @@ import {
 } from '@playwright/test';
 
 import { LoginPage } from '../pageObject/loginPage';
+import { DashboardPage } from '../pageObject/dashboardPage';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -18,10 +19,12 @@ export class CustomWorld extends World {
   page!: Page;
 
   loginPage!: LoginPage;
+  dashboardPage!: DashboardPage;
 
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};
+  
 
 
   constructor(options: IWorldOptions) {
@@ -30,6 +33,7 @@ export class CustomWorld extends World {
 
   initPages(): void {
     this.loginPage = new LoginPage(this.page);
+    this.dashboardPage = new DashboardPage(this.page);
   }
 
   setData(key: string, value: unknown): void {

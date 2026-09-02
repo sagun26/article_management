@@ -20,11 +20,12 @@ export class LoginPage {
     await this.page.goto(this.baseUrl);
   }
 
-  async enterEmail(email: string): Promise<void> {
-    await this.emailInput.fill(email);
+  async enterName(name: string): Promise<void> {
+    await this.emailInput.fill(name);
   }
 
-  async clickLogin(): Promise<void> {
+  async clickLoginButton(): Promise<void> {
     await this.loginButton.click();
   }
+  
 }
