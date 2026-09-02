@@ -12,6 +12,7 @@ import {
 
 import { LoginPage } from '../pageObject/loginPage';
 import { DashboardPage } from '../pageObject/dashboardPage';
+import { NotificationPage } from '../pageObject/notificationPage';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -20,11 +21,12 @@ export class CustomWorld extends World {
 
   loginPage!: LoginPage;
   dashboardPage!: DashboardPage;
+  notificationPage!:NotificationPage;
 
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};
-  
+    
 
 
   constructor(options: IWorldOptions) {

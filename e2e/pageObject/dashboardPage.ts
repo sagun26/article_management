@@ -4,11 +4,13 @@ export class DashboardPage {
     readonly calendar: Locator;
     
       public baseUrl: string;
+      public notification: Locator;
 
      constructor(page: Page) {
          this.page = page;
          this.calendar=this.page.getByRole('link', { name: 'Work Calendar' });
-         this.baseUrl = "https://dailyworkreport.com"
+         this.baseUrl = "https://dailyworkreport.com";
+         this.notification=this.page.getByRole("link", { name: "Notifications" });
   }
 
    async navigateToLoginPage(): Promise<void> {
@@ -19,4 +21,8 @@ export class DashboardPage {
     await this.calendar.click();
     await this.page.goto(this.baseUrl + "/calendar");
  }
+ async clickNotificationIcon(): Promise<void> {
+    await this.notification.click();
+    await this.page.goto(this.baseUrl + "/notifications");
 }
+}   

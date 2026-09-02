@@ -15,3 +15,11 @@ Then(
        await expect(this.page).toHaveURL("https://dailyworkreport.com/calendar");
     }
 );
+
+When("I click on the notification icon", async function (this: CustomWorld) {
+    this.dashboardPage = new DashboardPage(this.page);
+    await this.dashboardPage.clickNotificationIcon();
+});
+Then("I should see the notifications panel", async function(this:CustomWorld){
+    await expect(this.page).toHaveURL("https://dailyworkreport.com/notifications");
+})

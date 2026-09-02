@@ -14,3 +14,7 @@ Feature: Dashboard
   Scenario: Access Work Calendar
     When I click on Work Calendar
     Then I should be redirected to the Work Calendar page
+
+    Scenario: Access Notifications
+    When I click on the notification icon
+    Then I should see the notifications panel
