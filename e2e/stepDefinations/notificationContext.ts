@@ -23,11 +23,11 @@ Then("I should see the unread notifications", async function (this: CustomWorld)
     await expect(this.page).toHaveURL("https://dailyworkreport.com/notifications" );
 });
 
-When("I click on Mark all as read", async function (this: CustomWorld) {
+When("I click on See more", async function (this: CustomWorld) {
     this.notificationPage = new NotificationPage(this.page);
-    await this.notificationPage.markAllAsRead();
+    await this.notificationPage.viewMoreNotifications();
 });
 
-Then("all notifications should be marked as read", async function (this: CustomWorld) {
+Then("I should see more notifications", async function (this: CustomWorld) {
     await expect(this.page).toHaveURL("https://dailyworkreport.com/notifications");
 });

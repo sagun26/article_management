@@ -35,7 +35,7 @@ Given("I am logged in", async function (this: CustomWorld) {
 
     await this.loginPage.navigateToLoginPage();
 
-    await this.loginPage.enterName("nirajan");
+    await this.loginPage.enterName("sujata");
 
     await this.loginPage.clickLoginButton();
 

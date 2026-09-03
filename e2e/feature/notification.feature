@@ -13,5 +13,6 @@ Feature: Notifications
     Then I should see the unread notifications
 
   Scenario: Mark all notifications as read
-    When I click on Mark all as read
-    Then all notifications should be marked as read
+    When I click on see more 
+    Then I should see more notifications
+  

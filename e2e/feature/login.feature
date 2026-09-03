@@ -7,5 +7,5 @@ Feature: login
   Given I am on the login page
   When I enter valid username
     | Name  |
-    | nirajan |
+    | sujata |
   Then the user logged in successfully and redirected to the home page
