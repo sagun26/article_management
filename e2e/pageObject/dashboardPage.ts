@@ -25,4 +25,4 @@ export class DashboardPage {
     await this.notification.click();
     await this.page.goto(this.baseUrl + "/notifications");
 }
-}   
+}     

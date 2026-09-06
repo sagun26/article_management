@@ -13,6 +13,7 @@ import {
 import { LoginPage } from '../pageObject/loginPage';
 import { DashboardPage } from '../pageObject/dashboardPage';
 import { NotificationPage } from '../pageObject/notificationPage';
+import { ProductPage } from '../pageObject/productPage';
 
 export class CustomWorld extends World {
   browser!: Browser;
@@ -22,7 +23,7 @@ export class CustomWorld extends World {
   loginPage!: LoginPage;
   dashboardPage!: DashboardPage;
   notificationPage!:NotificationPage;
-
+  productPage!: ProductPage;
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};
@@ -36,6 +37,8 @@ export class CustomWorld extends World {
   initPages(): void {
     this.loginPage = new LoginPage(this.page);
     this.dashboardPage = new DashboardPage(this.page);
+    this.notificationPage = new NotificationPage(this.page);
+    this.productPage = new ProductPage(this.page);  
   }
 
   setData(key: string, value: unknown): void {
