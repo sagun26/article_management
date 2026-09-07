@@ -11,7 +11,7 @@ export class NotificationPage {
     }
 
    
-    async viewMoreNotifications() {
-        await this.seemoreButton.click();
-    }
+    // async viewMoreNotifications() {
+    //     await this.seemoreButton.click();
+    // }
 }

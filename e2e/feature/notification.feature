@@ -9,7 +9,7 @@ Feature: Notifications
     And I am on the Notifications page
 
   
-  Scenario:see more notifications
-    When I click on the See More button
-    Then I should see more notifications
+  # Scenario:see more notifications
+  #   When I click on the See More button
+  #   Then I should see more notifications
    

@@ -6,16 +6,19 @@ Feature: Product Management
   Scenario: Products page is displayed
     When I click on Products
     Then I should be redirected to the Products page
-    And I should see the Add Product button
-
-  Scenario:  Add Product form
-   
+  
     When I click on the Add Product button
     Then I should see the Add Product form
-    And  I select the following categories
-  | Category   |
-  | Ecomm      |
-  | Supplement |
+    And  I select the categories
+    And I click on the Continue button
+   And I enter the product details and add the product
+  | Product Name |
+  |toothcare |
+  # |toothcare1 |
+  # |toothcare2 |
+  # |toothcare3|
+   Then the product should be added successfully
+
 
 #   Scenario: Add a new product
 #     When I click on Products

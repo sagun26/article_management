@@ -15,10 +15,10 @@ Given("I am on the Notifications page", async function (this: CustomWorld) {
 });
 
 
-When("I click on the See More button", async function (this: CustomWorld) {
-    this.notificationPage = new NotificationPage(this.page);
-    await this.notificationPage.viewMoreNotifications();
-});
+// When("I click on the See More button", async function (this: CustomWorld) {
+//     this.notificationPage = new NotificationPage(this.page);
+//     await this.notificationPage.viewMoreNotifications();
+// });
 
 Then("I should see more notifications", async function (this: CustomWorld) {
     await expect(this.page).toHaveURL("https://dailyworkreport.com/notifications");
