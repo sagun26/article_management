@@ -15,7 +15,10 @@ export class ProductPage{
     readonly productCategoriesSelection:Locator; 
     readonly addProductBtn:Locator;
     readonly continueProduct:Locator;
-
+    readonly previewLinkUrl:Locator;
+    readonly affiliateDropdown:Locator;
+    readonly affiliateOption:Locator;
+  
     constructor(page:Page){
       this.page = page;
       this.productTab=page.getByRole("navigation").getByRole("link", { name: "Products" })
@@ -27,9 +30,12 @@ export class ProductPage{
 
       this.productNameField = this.page.getByPlaceholder('e.g. Alpha Whey');
     //  this.siteIncludedField =this.page.getByRole('button', { name: /Sites Included/ })
-      this.productCategoriesSelection = this.page.getByRole('button', { name: 'Select Category *' })
+     this.productCategoriesSelection = this.page.getByRole('button', { name: 'Select Category *' })
+     this.previewLinkUrl = this.page.getByText('Preview Link URL', { exact: false }).locator('..').locator('input[type="url"]');
+     this.affiliateDropdown = this.page.getByRole('button', { name: 'Select Affiliate...'}); 
+     this.affiliateOption = this.page.locator('div.cursor-pointer').filter({ hasText: /^Amazon Associates$/ });
+     this.addProductBtn =   this.page .locator('button.bg-blue-600').filter({ hasText: /^Add Product$/ });
 
-      this.addProductBtn =  this.page.getByRole('button', { name: 'Add Product' });
     this.continueProduct = this.page.getByRole('button', { name: 'Continue (1 site)' });
     }
     async clickProducts():Promise<void>{
@@ -76,13 +82,11 @@ async removeUnwantedSites(): Promise<void> {
 
   async enterProductDetails(productNames: string): Promise<void>{
     await this.productNameField.fill(productNames);
-    await this.page.getByRole('button', { name: 'Select Affiliate...' }).click();
-    await this.page.locator('div.cursor-pointer').filter({hasText: 'Amazon Associates'});
-    //await this.page.getByRole('button', { name: '🔥 High Trend' }).click();
-    //await this.page.locator('div').filter({hasText: 'Trend Link URL'}).locator('input[type="url"]').fill('https://example.com');
-    await this.page.locator('div').filter({hasText: 'Preview Link URL'}).locator('input[type="url"]').fill('https://example.com');
     await this.page.getByRole('button', { name: /Select Product Category/ }).click();
-    await this.page.getByText('test', { exact: true }).click();
+    await this.page.locator('div.cursor-pointer').filter({ hasText: /^men health$/ }).click();
+    await this.affiliateDropdown.click();
+    await this.affiliateOption.click();
+    await this.previewLinkUrl.fill("https://dailyworkreport.com/products");
   }
 
 

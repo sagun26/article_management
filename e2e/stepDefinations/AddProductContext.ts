@@ -1,7 +1,7 @@
 import{Given,When,Then} from "@cucumber/cucumber";
 import { CustomWorld } from "../support/customWorld";
 import { expect } from "@playwright/test";
-import { ProductPage } from "../pageObject/productPage";
+import { ProductPage } from "../pageObject/AddProductPage";
 
 When("I click on Products", async function (this: CustomWorld) {
     this.productPage = new ProductPage(this.page);

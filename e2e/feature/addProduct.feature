@@ -13,7 +13,7 @@ Feature: Product Management
     And I click on the Continue button
    And I enter the product details and add the product
   | Product Name |
-  |toothcare |
+  |toothcare111 |
   # |toothcare1 |
   # |toothcare2 |
   # |toothcare3|
