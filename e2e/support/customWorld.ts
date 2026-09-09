@@ -14,7 +14,7 @@ import { LoginPage } from '../pageObject/loginPage';
 //import { DashboardPage } from '../pageObject/dashboardPage';
 import { NotificationPage } from '../pageObject/notificationPage';
 import { ProductPage } from '../pageObject/AddProductPage';
-
+import { DeleteProductPage } from '../pageObject/deleteAndEditProductPage';
 export class CustomWorld extends World {
   browser!: Browser;
   context!: BrowserContext;
@@ -24,6 +24,8 @@ export class CustomWorld extends World {
  // dashboardPage!: DashboardPage;
   notificationPage!:NotificationPage;
   productPage!: ProductPage;
+  deleteProductPage!:DeleteProductPage;
+
   users: Record<string, unknown> = {};
   meetings: Record<string, unknown> = {};
   scenarioData: Record<string, unknown> = {};
@@ -39,6 +41,7 @@ export class CustomWorld extends World {
    // this.dashboardPage = new DashboardPage(this.page);
     this.notificationPage = new NotificationPage(this.page);
     this.productPage = new ProductPage(this.page);  
+    this.deleteProductPage= new DeleteProductPage(this.page);
   }
 
   setData(key: string, value: unknown): void {

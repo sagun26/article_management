@@ -8,16 +8,17 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-   "test:e2e": "cucumber-js \"e2e/feature/**/*.feature\" --require-module ts-node/register --require \"e2e/stepDefinations/**/*.ts\" --require cucumber.conf.js"
-},
+    "test:e2e": "cucumber-js \"e2e/feature/**/*.feature\" --require-module ts-node/register --require \"e2e/stepDefinations/**/*.ts\" --require cucumber.conf.js"
+  },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.4.0"
+    "@types/node": "^26.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "@cucumber/cucumber": "^13.2.1",
-    "install": "^0.13.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^7.0.2"
+    "dotenv": "^17.4.2",
+    "install": "^0.13.0"
   }
 }
