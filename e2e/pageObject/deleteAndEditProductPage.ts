@@ -3,7 +3,7 @@ import { Locator, Page } from "@playwright/test";
 export class DeleteProductPage {
 
     readonly page: Page;
-    readonly deleteBth: Locator;
+    readonly deleteBtn: Locator;
     readonly dlt: Locator;
     readonly editbtn:Locator;
     readonly editcategories:Locator; 
@@ -13,7 +13,7 @@ export class DeleteProductPage {
     constructor(page: Page) {
         this.page = page;
 
-        this.deleteBth = page.getByRole("button", { name: "Delete"  }).first();
+        this.deleteBtn = page.getByRole("button", { name: "Delete"  }).first();
 
         this.dlt = page.getByRole("button", {  name: "Delete Product" });
         this.editbtn=page.getByRole('button', { name: 'Edit' }).first();
@@ -23,7 +23,7 @@ export class DeleteProductPage {
         }
 
     async DeleteButton(): Promise<void> {
-        await this.deleteBth.click();
+        await this.deleteBtn.click();
     }
 
     async delete(): Promise<void> {
